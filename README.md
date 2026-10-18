@@ -3,15 +3,28 @@
 Local inventory and build manager for electronic components. It keeps the parts list, project BOMs, purchase orders, and the paperwork around a build on one Windows PC.
 
 Copyright R.C. Tober AB. All rights reserved.
+![Inventory](docs/ToberStash_inventory.png)
 
 ## What it does
 
 - Inventory with stock, locations, photos, datasheets, and MPN lookup.
 - Projects that turn a BOM into a build, a test protocol, and a PDF report.
 - Purchase orders, receiving, and a comparison of supplier prices.
+- A to-do list for low stock, overdue purchases, ready builds, and waiting tests.
+- Excel and CSV import, and an inventory export.
+- BOM import from EasyEDA, KiCad, or Altium.
+- Pick lists, scrap, and serial numbers on a build.
+- An export sheet with origin, HS, TARIC, HTSUS, and ECCN.
+- Supplier cards, with part numbers and prices on the component.
+- MPN lookup from LCSC, and from Mouser, DigiKey, TME, and Nexar with your own keys.
+- Stock history, and a merge for rows that share an MPN.
 - SQLite on the machine, or MySQL, MariaDB, or SQL Server.
+- JSON backup while the app is open.
+- Move the component list to or from Part-DB and InvenTree.
 - English, Swedish, German, French, Spanish, Polish, Danish, Norwegian Bokmål, Finnish, Hindi, Simplified Chinese, and Japanese.
 - Display currencies: SEK, NOK, DKK, EUR, CHF, GBP, PLN, USD, CNY, JPY, and INR. A stored price keeps its original currency. The lists convert to the currency chosen under **Settings → Economy**.
+- Prices can be shown with VAT. Stored prices stay exclusive of VAT.
+- Nine display themes, and your own logo in the sidebar.
 
 The current version is **0.9.0**. See [CHANGELOG.md](CHANGELOG.md).
 
@@ -25,7 +38,7 @@ Projects, purchase orders, tests, and order documents stay in ToberStash. Import
 
 ToberStash is a folder of files, not a setup program. It runs on 64-bit Windows.
 
-1. Install the [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (x64). The SDK is only needed if you build from source.
+1. Install the [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) (x64). 
 2. Download the zip and extract the whole folder. Keep every file next to `ToberStash.exe`. The PDF reports need the native libraries that sit beside it.
 3. Start `ToberStash.exe`.
 
@@ -46,27 +59,6 @@ To remove ToberStash, delete the extracted folder and `%LocalAppData%\ToberStash
 
 - Windows 64-bit
 - [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) to run the published build
-- [.NET 10 SDK](https://dotnet.microsoft.com/download) to build from source
-
-## Build
-
-From the repository root:
-
-```powershell
-dotnet build ToberStash/ToberStash.csproj
-```
-
-## Publish
-
-The folder profile writes a 64-bit Release build and leaves native libraries next to the executable. QuestPDF needs those libraries beside the app.
-
-```powershell
-dotnet publish ToberStash/ToberStash.csproj -c Release -p:PublishProfile=FolderProfile
-```
-
-Output: `ToberStash/bin/Release/net10.0-windows/publish/win-x64/`
-
-A 32-bit profile is available as `FolderProfile-x86`.
 
 ## Data
 
@@ -81,6 +73,41 @@ Copyright lines and license terms are printed at the bottom of this file. The sa
 ## Version
 
 The version shown in **System → About** comes from `ToberStash/ToberStash.csproj`.
+
+## Images
+
+Inventory list:![Inventory](docs/ToberStash_inventory.png)
+
+Component card:![Component](docs/Toberstash_ComponentCard.png)
+
+Project management:![Project](docs/Toberstash_ProjectManagement.png)
+
+Supplier management:![Supplier](docs/Toberstash_SuppliersManagment.png)
+
+Purchase order management:![PurchaseOrder](docs/Toberstash_PurchaseOrderManagement.png)
+
+Build report:![BuildReport](docs/Toberstash_BuildReport.png)
+
+Display settings:![BuildReport](docs/Toberstash_DisplaySettings.png)
+
+System settings:![Project](docs/Toberstash_SystemSettings.png)
+
+Logo settings:![Project](docs/Toberstash_UseYourOwnLogo.png)
+
+Automatic and manual backup:![Project](docs/Toberstash_RunBackup.png)
+
+9 Themes built in:![Project](docs/Toberstash_Themes.png)
+
+## In more detail
+
+- **To do.** The start page lists parts below the reorder point, overdue purchases, builds that have the parts they need, and projects waiting for a test.
+- **Inventory.** One row per component, with MPN, name, value, footprint, manufacturer, stock, and a storage location of up to three levels, such as a row, a shelf, and a box. Search across those fields, and filter by type, location, low stock, verified, or discontinued. Choose which columns the table shows, and in which order. Adjust stock and read the stock history. Merge rows that share an MPN. Attach photos, a datasheet, and RoHS, REACH, and RED/EMC documents.
+- **Part lookup.** Type an MPN and fill empty fields from LCSC, or from Mouser, DigiKey, TME, and Nexar when you add your own keys. The same lookup can refresh prices. A value already on the component is left as it is, unless you pick a replacement yourself. The keys stay on this PC, encrypted for the Windows account.
+- **Projects.** Import a BOM from EasyEDA, KiCad, or Altium, or add lines from the inventory. Unmatched lines and shortages are shown before the build. The pick list is sorted by location. Running the build deducts stock, and undoing it puts the stock back. A build can start before serial numbers exist, and the project stays open until every serial-tracked part has one. Scrap can be registered for parts on the BOM and for parts that were not. The test follows the steps defined under **Settings → Lists**, with a comment on each step. A completed build locks the cost and writes a PDF report, plus an export sheet with origin, HS, TARIC, HTSUS, and ECCN.
+- **Purchases.** Purchase orders move through open, ordered, and closed. Receive a line when it arrives, keep a requested delivery date and a tracking link, and store the invoice, receipt, and mail on the order. Shortages from a project, and every part below its reorder point, can be added to an order. Compare the saved price at each supplier, and move a line to another order.
+- **Suppliers.** Each supplier has a card with website, contact, and address. Part numbers and prices for that supplier are stored on the component.
+- **Database.** The first start uses a SQLite file on the machine. **System → Database** can switch to MySQL, MariaDB, or SQL Server, and the tables are created on that server. A JSON backup runs while ToberStash is open. The component list can be moved to or from Part-DB and InvenTree.
+- **Language and money.** English, Swedish, German, French, Spanish, Polish, Danish, Norwegian Bokmål, Finnish, Hindi, Simplified Chinese, and Japanese. Display currencies: SEK, NOK, DKK, EUR, CHF, GBP, PLN, USD, CNY, JPY, and INR. A stored price keeps the currency it was entered in. Lists, cards, and project cost convert to the currency chosen under **Settings → Economy**. Prices can be shown with VAT. The stored price stays exclusive of VAT.
 
 ## Support
 
