@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local app data and debug symbols, if a build folder is copied in by mistake
+connection.json
+secrets.dat
+crash.log
+*.db
+*.pdb

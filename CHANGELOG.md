@@ -1,0 +1,39 @@
+# Changelog
+
+ToberStash versions follow the development of one product. Nothing was tagged before 0.9.0, so the work from 15 September 2026 to 18 October 2026 is collected here.
+
+## 0.9.0 — 2026-10-18
+
+First numbered version, prepared for use. The next public build can be tagged 1.0.0.
+
+### Inventory
+
+- Component list with search, stock, low-stock marking, and storage locations.
+- Choose which columns the inventory table shows.
+- Excel import and export.
+- Photos, datasheets, and other files stored on the component.
+- MPN lookup through Mouser, DigiKey, TME, and Nexar. API keys stay on the PC, encrypted for the Windows account.
+
+### Projects
+
+- BOM builds with part matching, shortages, and a guided build.
+- A build can start before serial numbers exist. The project cannot be finished until they are entered.
+- Scrap of parts on the BOM, and of parts that were not on the BOM.
+- Test protocol defined under Settings → Lists: ordered steps, an instruction on each step, and a comment when the test is run.
+- Build-report PDF, with a progress indicator while the file is written.
+- Export sheet for origin, HS, TARIC, HTSUS, and ECCN.
+
+### Purchases
+
+- Purchase orders, receiving, and supplier comparison.
+- Status filters.
+- The project list and the purchase list can be sorted by last saved, or chronologically with the newest created row first.
+
+### System
+
+- SQLite by default. MySQL, MariaDB, or SQL Server when a server is configured.
+- JSON backup while the app is open.
+- Move the component list to or from InvenTree and Part-DB.
+- Themes, fonts, and twelve languages: English, Swedish, German, French, Spanish, Polish, Danish, Norwegian Bokmål, Finnish, Hindi, Simplified Chinese, and Japanese.
+- Display currencies include Chinese yuan, Japanese yen, and Indian rupee. DigiKey prices can be fetched in those currencies.
+- About page with a short disclaimer and the third-party copyright and license notices.
