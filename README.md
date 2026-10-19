@@ -19,6 +19,7 @@ Copyright R.C. Tober AB. All rights reserved.
 - MPN lookup from LCSC, and from Mouser, DigiKey, TME, and Nexar with your own keys.
 - Stock history, and a merge for rows that share an MPN.
 - SQLite on the machine, or MySQL, MariaDB, or SQL Server.
+- Work offline copies a server database to this PC, and copies it back when you go online again.
 - JSON backup while the app is open.
 - Move the component list to or from Part-DB and InvenTree.
 - English, Swedish, German, French, Spanish, Polish, Danish, Norwegian Bokmål, Finnish, Hindi, Simplified Chinese, and Japanese.
@@ -26,7 +27,7 @@ Copyright R.C. Tober AB. All rights reserved.
 - Prices can be shown with VAT. Stored prices stay exclusive of VAT.
 - Nine display themes, and your own logo in the sidebar.
 
-The current version is **0.9.0**. See [CHANGELOG.md](CHANGELOG.md). A longer guide is in [WIKI.md](WIKI.md).
+The current version is **0.9.1**. See [CHANGELOG.md](CHANGELOG.md). A longer guide is in [WIKI.md](WIKI.md).
 
 ## When the inventory outgrows this app
 
@@ -62,7 +63,7 @@ To remove ToberStash, delete the extracted folder and `%LocalAppData%\ToberStash
 
 ## Data
 
-The first launch uses a local SQLite file. Under **System → Database** the connection can be switched to MySQL, MariaDB, or SQL Server. Export a JSON backup before switching, then import it into the new database.
+The first launch uses a local SQLite file. Under **System → Database** the connection can be switched to MySQL, MariaDB, or SQL Server. Export a JSON backup before switching, then import it into the new database. **Work offline** copies a server on another machine to this PC and copies it back later. Mark that server as running on this computer, and the button stays off.
 
 API keys for part lookup are not stored in the inventory database. They stay on that PC, encrypted for the Windows account.
 
@@ -106,7 +107,7 @@ Automatic and manual backup:![Project](docs/Toberstash_RunBackup.png)
 - **Projects.** Import a BOM from EasyEDA, KiCad, or Altium, or add lines from the inventory. Unmatched lines and shortages are shown before the build. The pick list is sorted by location. Running the build deducts stock, and undoing it puts the stock back. A build can start before serial numbers exist, and the project stays open until every serial-tracked part has one. Scrap can be registered for parts on the BOM and for parts that were not. The test follows the steps defined under **Settings → Lists**, with a comment on each step. A completed build locks the cost and writes a PDF report, plus an export sheet with origin, HS, TARIC, HTSUS, and ECCN.
 - **Purchases.** Purchase orders move through open, ordered, and closed. Receive a line when it arrives, keep a requested delivery date and a tracking link, and store the invoice, receipt, and mail on the order. Shortages from a project, and every part below its reorder point, can be added to an order. Compare the saved price at each supplier, and move a line to another order.
 - **Suppliers.** Each supplier has a card with website, contact, and address. Part numbers and prices for that supplier are stored on the component.
-- **Database.** The first start uses a SQLite file on the machine. **System → Database** can switch to MySQL, MariaDB, or SQL Server, and the tables are created on that server. A JSON backup runs while ToberStash is open. The component list can be moved to or from Part-DB and InvenTree.
+- **Database.** The first start uses a SQLite file on the machine. **System → Database** can switch to MySQL, MariaDB, or SQL Server, and the tables are created on that server. **Work offline** copies a server on another machine to this PC and copies it back when you go online. The mode is shown at the bottom of the sidebar. The button stays off for SQLite and for a server marked as running on this computer. A JSON backup runs while ToberStash is open. The component list can be moved to or from Part-DB and InvenTree.
 - **Language and money.** English, Swedish, German, French, Spanish, Polish, Danish, Norwegian Bokmål, Finnish, Hindi, Simplified Chinese, and Japanese. Display currencies: SEK, NOK, DKK, EUR, CHF, GBP, PLN, USD, CNY, JPY, and INR. A stored price keeps the currency it was entered in. Lists, cards, and project cost convert to the currency chosen under **Settings → Economy**. Prices can be shown with VAT. The stored price stays exclusive of VAT.
 
 ## Support

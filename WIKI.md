@@ -1,6 +1,6 @@
 # ToberStash wiki
 
-How to use ToberStash 0.9.0. Menu names below are the English ones. **Settings → Language** shows the same commands in the language you pick.
+How to use ToberStash 0.9.1. Menu names below are the English ones. **Settings → Language** shows the same commands in the language you pick.
 
 ToberStash keeps a component inventory, the projects that consume it, and the purchase orders that refill it. The first start creates an empty inventory in `%LocalAppData%\ToberStash`. Photos, datasheets, purchase documents, and the local database stay in that folder. Nothing is written into the folder you extracted.
 
@@ -421,9 +421,19 @@ Save on the settings page writes the section you are in.
 
 Export a JSON backup on the old database first, switch, then import that backup if the new database is empty. **Save SQL setup script** writes a script you can run in a tool such as phpMyAdmin. The program does not need that file in order to start. It creates the tables itself.
 
-If the configured server cannot be opened, ToberStash says so and uses the local SQLite file for that session. Your server data is left where it is. Fix the connection and use it again.
+If the configured server cannot be opened at startup, ToberStash says so and opens the ordinary local SQLite file for that session. That is not Work offline, and it does not copy the server. Your server data is left where it is. Fix the connection and use it again.
 
-While a server session drops, the program tries to reconnect on its own.
+While a server session drops, the program tries to reconnect on its own. It does not switch to Work offline by itself.
+
+**Work offline** is for a server database on another machine. The strip at the bottom of the sidebar shows the mode: Online, Offline, or On this computer. The button sits in that strip.
+
+Tick **This database runs on my computer** when MySQL, MariaDB, or SQL Server runs on this PC. Work offline is then switched off, because a second copy is not useful. SQLite is already on this computer, so the button stays off for it too.
+
+**Work offline** copies the whole server database into a separate SQLite file on this PC. You keep working on that copy. The server is left as it is. **Work online** copies the file back and replaces the server database. Changes made on the server while you were offline are replaced. If the copy fails, you stay in the mode you were already in, and you can work again only when the message says the copy has finished.
+
+Photos, datasheets, and purchase files are what can make a copy too large to hold in memory. A component list on its own, even a large one, is fine. Around 150 MB of those files you get a warning that also shows how many components, projects, and purchase orders you have. Around 1 GB the copy is refused.
+
+The scheduled backup follows whichever database is open.
 
 **System → Program log** records edits, imports, purchases, merges, and price updates. **System → Stock log** records quantity movements. **System → About** shows the version, a short disclaimer, and the third-party notices.
 

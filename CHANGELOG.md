@@ -2,6 +2,14 @@
 
 ToberStash versions follow the development of one product. Nothing was tagged before 0.9.0, so the work from 15 September 2026 to 18 October 2026 is collected here.
 
+## 0.9.1 — 2026-10-19
+
+- Work offline copies a server database onto this PC and copies it back when you choose Work online. The mode is shown at the bottom of the sidebar. The button stays off for SQLite, and for a server marked as running on this computer. A copy with about 150 MB of photos and documents asks first. Around 1 GB it is refused.
+- Excel and CSV import keeps the Browse button beside the file path.
+- Advanced part lookup still lists the fields after the program has been protected with .NET Reactor.
+- Mouser, DigiKey, and Nexar search requests keep their field names after that protection.
+- Distributor lookup waits 30 seconds for a response.
+
 ## 0.9.0 — 2026-10-18
 
 First numbered version, prepared for use. The next public build can be tagged 1.0.0.
