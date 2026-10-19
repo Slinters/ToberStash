@@ -79,25 +79,35 @@ The version shown in **System → About** comes from `ToberStash/ToberStash.cspr
 
 Inventory list:![Inventory](docs/ToberStash_inventory.png)
 
-Component card:![Component](docs/Toberstash_ComponentCard.png)
+Component card:
+![Component](docs/Toberstash_ComponentCard.png)
 
-Project management:![Project](docs/Toberstash_ProjectManagement.png)
+Project management:
+![Project](docs/Toberstash_ProjectManagement.png)
 
-Supplier management:![Supplier](docs/Toberstash_SuppliersManagment.png)
+Supplier management:
+![Supplier](docs/Toberstash_SuppliersManagment.png)
 
-Purchase order management:![PurchaseOrder](docs/Toberstash_PurchaseOrderManagement.png)
+Purchase order management:
+![PurchaseOrder](docs/Toberstash_PurchaseOrderManagement.png)
 
-Build report:![BuildReport](docs/Toberstash_BuildReport.png)
+Build report:
+![BuildReport](docs/Toberstash_BuildReport.png)
 
-Display settings:![BuildReport](docs/Toberstash_DisplaySettings.png)
+Display settings:
+![BuildReport](docs/Toberstash_DisplaySettings.png)
 
-System settings:![Project](docs/Toberstash_SystemSettings.png)
+System settings:
+![Project](docs/Toberstash_SystemSettings.png)
 
-Logo settings:![Project](docs/Toberstash_UseYourOwnLogo.png)
+Logo settings:
+![Project](docs/Toberstash_UseYourOwnLogo.png)
 
-Automatic and manual backup:![Project](docs/Toberstash_RunBackup.png)
+Automatic and manual backup:
+![Project](docs/Toberstash_RunBackup.png)
 
-9 Themes built in:![Project](docs/Toberstash_Themes.png)
+9 Themes built in:
+![Project](docs/Toberstash_Themes.png)
 
 ## In more detail
 
