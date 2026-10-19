@@ -80,6 +80,7 @@ The version shown in **System → About** comes from `ToberStash/ToberStash.cspr
 Inventory list:![Inventory](docs/ToberStash_inventory.png)
 
 Component card:
+
 ![Component](docs/Toberstash_ComponentCard.png)
 
 Project management:
@@ -95,12 +96,14 @@ Build report:
 ![BuildReport](docs/Toberstash_BuildReport.png)
 
 Display settings:
+
 ![BuildReport](docs/Toberstash_DisplaySettings.png)
 
 System settings:
 ![Project](docs/Toberstash_SystemSettings.png)
 
 Logo settings:
+
 ![Project](docs/Toberstash_UseYourOwnLogo.png)
 
 Automatic and manual backup:
