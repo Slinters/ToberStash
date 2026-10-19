@@ -26,7 +26,7 @@ Copyright R.C. Tober AB. All rights reserved.
 - Prices can be shown with VAT. Stored prices stay exclusive of VAT.
 - Nine display themes, and your own logo in the sidebar.
 
-The current version is **0.9.0**. See [CHANGELOG.md](CHANGELOG.md).
+The current version is **0.9.0**. See [CHANGELOG.md](CHANGELOG.md). A longer guide is in [WIKI.md](WIKI.md).
 
 ## When the inventory outgrows this app
 
