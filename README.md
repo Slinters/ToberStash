@@ -7,6 +7,9 @@
 Local inventory and build manager for electronic components. It keeps the parts list, project BOMs, purchase orders, and the paperwork around a build on one Windows PC.
 
 Copyright R.C. Tober AB. All rights reserved.
+
+[Download here.](https://gitlab.com/rctober.publicrepo/toberstash_public/-/tree/main/binary)
+
 ![Inventory](docs/ToberStash_inventory.png)
 
 ## What it does
