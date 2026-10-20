@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/ToberStashLogo.png" alt="ToberStash" width="480">
+</p>
+
 # ToberStash
 
 Local inventory and build manager for electronic components. It keeps the parts list, project BOMs, purchase orders, and the paperwork around a build on one Windows PC.
