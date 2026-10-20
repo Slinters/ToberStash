@@ -8,7 +8,7 @@ Local inventory and build manager for electronic components. It keeps the parts 
 
 Copyright R.C. Tober AB. All rights reserved.
 
-[Download here.](https://gitlab.com/rctober.publicrepo/toberstash_public/-/tree/main/binary)
+[Download here.](/binary)
 
 ![Inventory](docs/ToberStash_inventory.png)
 
