@@ -1,6 +1,6 @@
 # ToberStash wiki
 
-How to use ToberStash 0.9.1. Menu names below are the English ones. **Settings → Language** shows the same commands in the language you pick.
+How to use ToberStash 0.9.2. Menu names below are the English ones. **Settings → Language** shows the same commands in the language you pick.
 
 ToberStash keeps a component inventory, the projects that consume it, and the purchase orders that refill it. The first start creates an empty inventory in `%LocalAppData%\ToberStash`. Photos, datasheets, purchase documents, and the local database stay in that folder. Nothing is written into the folder you extracted.
 
@@ -432,6 +432,12 @@ Tick **This database runs on my computer** when MySQL, MariaDB, or SQL Server ru
 **Work offline** copies the whole server database into a separate SQLite file on this PC. You keep working on that copy. The server is left as it is. **Work online** copies the file back and replaces the server database. Changes made on the server while you were offline are replaced. If the copy fails, you stay in the mode you were already in, and you can work again only when the message says the copy has finished.
 
 Photos, datasheets, and purchase files are what can make a copy too large to hold in memory. A component list on its own, even a large one, is fine. Around 150 MB of those files you get a warning that also shows how many components, projects, and purchase orders you have. Around 1 GB the copy is refused.
+
+**Several people.** Tick **Several people use this database** under System → Database. Each PC sets its own name. The name stays on that PC and is written into the program log and the stock log.
+
+Opening a component, a purchase, a supplier, or a list locks that row until the window closes. Another person sees who has it, and Edit stays off. A project build is separate: **Lock to me** stops anyone else from starting, undoing, or scrapping that build. **Release** gives it back. The project itself can still be opened. **System → Locks** lists locks that stayed behind, and can remove one.
+
+**Work offline** with several people copies the server for reading only. Add, edit, and delete stay off. **Work online** deletes that copy and opens the server again. The server is not replaced. With a single user, Work offline still copies both ways, and going online replaces the server.
 
 The scheduled backup follows whichever database is open.
 
